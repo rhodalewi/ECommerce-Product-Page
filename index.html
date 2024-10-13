@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>E-commerce product page</title>
+</head>
+<body>
+  <div class="body-opacity"></div>
+  <div class="container">
+    <header>
+        <div class="menus">
+          <img src="./images/icon-menu.svg" alt="menu" id="menuIcon">
+          <img src="./images/icon-close.svg" alt="menuClose" id="menuClose" class="toggleMenu">
+        </div>
+        
+        <img src="./images/logo.svg" alt="Logo" id="logo">
+
+        <nav class="navBar">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header3">
+          <div class="carts">
+            <p class="cartNumber">3</p>
+            <img src="./images/icon-cart.svg" alt="Cart" id="cart">
+          </div>
+        
+            <img src="./images/image-avatar.png" alt="dp" id="dp">
+
+            <!-- EMPTY BASKET-->
+            <div class="emptyBasket">
+              <p class="cart">Cart</p>
+              <p class="emptyMessage">Your cart is empty.</p>
+            </div>
+              
+
+              <!-- FILLED BASKET -->
+            <div class="filledBasket">
+              <p class="cart">Cart</p>
+              <div class="filledMessage">  
+                <div><img src="./images/image-product-1-thumbnail.jpg" alt="shoePicked" class="imgSelect"></div>
+                <div class="info">
+                  <p>Fall Limited Edition Sneakers</p>
+                  <p>$125.00 &times; <span class="noOfItem">3</span> <strong class="totalAmount">$375.00</strong></p>
+                </div>
+                <div class="delete"><img src="./images/icon-delete.svg" alt="delete" id="delete"></div>
+                <button class="checkout">Checkout</button>
+              </div>
+            </div>
+        </div> 
+    </header>
+
+    <main id="main">
+      <div class="products-pics">
+        
+        <img src="./images/image-product-1.jpg" alt="product" id="viewPic">
+   
+        <div class="products-list">
+          <div class="picks border">
+            <img onclick="changeImg('/images/image-product-1.jpg')" src="./images/image-product-1-thumbnail.jpg" alt="product" class="product opacity">
+          </div>
+          <div class="picks thumbnail-container">
+            <img onclick="changeImg('./images/image-product-2.jpg')" src="./images/image-product-2-thumbnail.jpg" alt="product" class="product">
+          </div>
+          <div class="picks thumbnail-container">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="product" class="product" onclick="changeImg('./images/image-product-3.jpg')">
+          </div>
+          <div class="picks thumbnail-container">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="product" class="product" onclick="changeImg('./images/image-product-4.jpg')">
+          </div> 
+        </div>
+      </div>
+
+    <div id="lightbox">
+      <div class="productsPics1">
+        <div class="close"><img src="./images/icon-close.svg" alt="close" id="close"></div>
+
+        <div class="page">
+          <div class="slide">
+            <div onclick="slideImg(-1)" class="previous"><img src="./images/icon-previous.svg" alt="previous" id="previous"></div>
+            <div onclick="slideImg(1)" class="next"><img src="./images/icon-next.svg" alt="next" id="next"></div>
+          </div>
+
+          <div class="viewPic1"><img src="./images/image-product-1.jpg" alt="product" id="viewPic1"></div>
+        </div>
+
+          <div class="productsList1">
+            <div class="picks1 border">
+              <img onclick="changeLightboxImg('/images/image-product-1.jpg')" src="./images/image-product-1-thumbnail.jpg" alt="product" class="product1 opacity">
+            </div>
+            <div class="picks1">
+              <img onclick="changeLightboxImg('/images/image-product-2.jpg')" src="./images/image-product-2-thumbnail.jpg" alt="product" class="product1">
+            </div>
+            <div class="picks1">
+              <img onclick="changeLightboxImg('/images/image-product-3.jpg')" src="./images/image-product-3-thumbnail.jpg" alt="product" class="product1">
+            </div>
+            <div class="picks1">
+              <img onclick="changeLightboxImg('/images/image-product-4.jpg')" src="./images/image-product-4-thumbnail.jpg" alt="product" class="product1">
+            </div> 
+          </div>  
+      </div>
+    </div>
+
+      <div class="product-details">
+          <p class="title">Sneaker Company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p class="product-explain"> These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+          <div class="price">
+            <div class="discount-price">
+              <p>$</p>
+              <input type="text" class="discountPrice" value="125.00" readonly>
+            </div>
+           
+            <p class="discountPercent">50%</p>
+            <p class="normalPrice">$250.00</p>
+          </div>
+          
+         
+            <div class="add">
+              <div class="incre-decre">
+                <button id="decrement"><img src="./images/icon-minus.svg" alt="decrement" ></button>
+                <p class="quantity">0</p>
+                <button id="increment"><img src="./images/icon-plus.svg" alt="increment"></button>
+              </div>
+
+              <button type="button" id="btn">
+                <img src="./images/icon-cart.svg" alt="cart" class="btnCart">
+                Add to cart
+              </button>
+            </div>
+      </div>
+    </main>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
